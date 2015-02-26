@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string.h>
 
-const char* g_strconf = "/etc/naiky/mysql_redis.conf";
+const char* g_strconf = "/etc/ccfast/mysql_redis.conf";
 
 
 SystemParameter* SystemParameter::instance()

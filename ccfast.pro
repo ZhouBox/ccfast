@@ -44,3 +44,8 @@ LIBS += -lfcgi \
 
 DEFINES += MYSQLPP_MYSQL_HEADERS_BURIED _GLIBCXX_PERMIT_BACKWARD_HASH
 
+DISTFILES += \
+    ccfast_install/ccfast/mysql_redis.conf \
+    ccfast_install/ccfast/sendmail.py \
+    ccfast_install/install
+
