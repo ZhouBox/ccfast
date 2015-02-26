@@ -1,0 +1,4 @@
+#!/bin/sh
+sudo cp -r ./ccfast /etc/
+sudo mkdir /usr/local/ccfast
+sudo cp ../ccfast /usr/local/ccfast
