@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Ccfast : a c++ fastcgi framework">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Ccfast</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/ZhouBox/ccfast">View on GitHub</a>
+
+          <h1 id="project_title">Ccfast</h1>
+          <h2 id="project_tagline">a c++ fastcgi framework</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/ZhouBox/ccfast/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/ZhouBox/ccfast/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="ccfast" class="anchor" href="#ccfast" aria-hidden="true"><span class="octicon octicon-link"></span></a>ccfast</h1>
+
+<p>这是一个基于FastCGI和C++的基于HTTP的Resuful API开发框架。其依赖于fastcgi库，boost库，libmysqlpp，libredis，jsoncpp,其中用了C++11的特性。</p>
+
+<p>前端web服务器我们使用Nginx，需要的配置如下：  </p>
+
+<div class="highlight highlight-C"><pre>   location ~* ^/ccfast/.+\.<span class="pl-k">do</span>$ {
+           fastcgi_pass    <span class="pl-c1">127.0.0.1</span>:<span class="pl-c1">10000</span>;
+           include         fastcgi.<span class="pl-vo">conf</span>;
+        }
+</pre></div>
+
+<p><strong>ccfast</strong> 和main.cpp中的 <code>set_project</code>的值一样，如下:</p>
+
+<div class="highlight highlight-c++"><pre>        UrlRoute* _p = UrlRoute::instance();
+        _p-&gt;<span class="pl-en">set_project</span>(<span class="pl-s1"><span class="pl-pds">"</span>/ccfast<span class="pl-pds">"</span></span>);</pre></div>
+
+<p>在 <strong>urlfunction.h</strong> 添加一个url对应的function，在 <strong>urlfunction.cpp</strong> 中实现，在 <strong>main.cpp</strong> 中注册这个url和方法。如下：</p>
+
+<div class="highlight highlight-c++"><pre>        _p-&gt;<span class="pl-en">register_url</span>(<span class="pl-s1"><span class="pl-pds">"</span>/love.do<span class="pl-pds">"</span></span>, love);</pre></div>
+
+<p>启动nginx，在浏览器中，输入<code>http://localhost/ccfast/love.do?boy=zhou&amp;girl=chen</code>，结果如下图：
+</p>
+<img src="http://img.blog.csdn.net/20150226203510287">
+
+
+<p>基于这个框架，我们可以快速的开发效率很高的API服务。详细请看 <strong>love</strong> 的例子。
+请设置好你自己的mysql_redis.conf，不然不能正确运行。</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Ccfast maintained by <a href="https://github.com/ZhouBox">ZhouBox</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
