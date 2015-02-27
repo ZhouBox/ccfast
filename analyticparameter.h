@@ -177,7 +177,7 @@ public:
     }
     void registerFastParse(const do_fast_parse& functional_)
     {
-        m_doParse1Functional = functional_;
+        m_doParseFastFunctional = functional_;
     }
 
     void clear()
@@ -190,7 +190,7 @@ private:
     std::string m_paravalsBuffer;
     T m_ParaVals;
     do_parse m_doParseFunctional;
-    do_fast_parse m_doParse1Functional;
+    do_fast_parse m_doParseFastFunctional;
 };
 
 template <typename T>
@@ -212,7 +212,7 @@ void ParameterAnalytic<T>::fast_analytic()
              [](typename T::type_paraPair& t){t.second.clear();});
     try
     {
-        m_doParse1Functional(m_paravalsBuffer, m_ParaVals);
+        m_doParseFastFunctional(m_paravalsBuffer, m_ParaVals);
     }catch(const std::exception &ex)
     {
         throw ex;
