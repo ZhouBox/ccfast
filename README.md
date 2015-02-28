@@ -28,5 +28,5 @@
 请设置好你自己的mysql_redis.conf，不然不能正确运行。
 
 ###INSTALL
-使用ccfast_install进行安装，我们使用 ** spawn-fcgi** 来进行fcgi进程的启动，命令如下：spawn-fcgi -a 127.0.0.1 -p 10000 -f /usr/local/ccfast/ccfast 
+使用ccfast_install进行安装，我们使用 **spawn-fcgi** 来进行fcgi进程的启动，命令如下：spawn-fcgi -a 127.0.0.1 -p 10000 -f /usr/local/ccfast/ccfast 
 
