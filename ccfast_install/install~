@@ -1,0 +1,4 @@
+#!/bin/sh
+sudo cp -r ./naiky /etc/
+sudo mkdir /usr/local/naiky
+sudo cp ../NcStudioFastcgi /usr/local/naiky
