@@ -1,4 +1,8 @@
 # ccfast
+
+
+[![LICENSE](https://img.shields.io/badge/license-NPL%20(The%20996%20Prohibited%20License)-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
+
 这是一个基于FastCGI和C\+\+的RESTful API开发框架。其依赖于fastcgi，boost，libmysqlpp，jsoncpp,其中用了C\+\+11的特性。现已初步添加了基于Redis的Session支持。
 
 前端web服务器我们使用Nginx，需要的配置如下：  
